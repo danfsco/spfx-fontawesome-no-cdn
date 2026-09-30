@@ -6,7 +6,7 @@ solution, so the browser does not connect to the public Font Awesome CDN.
 
 ## Demo
 
-[Watch the Font Awesome Icon Picker demo](demo.webm)
+[![Font Awesome Icon Picker demo](demo.gif)](demo.webm)
 
 ## Author experience
 
