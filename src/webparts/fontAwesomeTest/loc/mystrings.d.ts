@@ -1,16 +1,24 @@
 declare interface IFontAwesomeTestWebPartStrings {
+  AccessibleLabelFieldLabel: string;
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
-  AppLocalEnvironmentSharePoint: string;
-  AppLocalEnvironmentTeams: string;
-  AppLocalEnvironmentOffice: string;
-  AppLocalEnvironmentOutlook: string;
-  AppSharePointEnvironment: string;
-  AppTeamsTabEnvironment: string;
-  AppOfficeEnvironment: string;
-  AppOutlookEnvironment: string;
-  UnknownEnvironment: string;
+  CircleCheckIcon: string;
+  CircleInfoIcon: string;
+  ColorFieldLabel: string;
+  ColorValidationMessage: string;
+  EnvelopeIcon: string;
+  HeartIcon: string;
+  HouseIcon: string;
+  IconFieldLabel: string;
+  LinkFieldDescription: string;
+  LinkFieldLabel: string;
+  LinkValidationMessage: string;
+  OpenInNewTabFieldLabel: string;
+  ServerIcon: string;
+  ShieldIcon: string;
+  ShowLabelFieldLabel: string;
+  SizeFieldLabel: string;
+  StarIcon: string;
 }
 
 declare module 'FontAwesomeTestWebPartStrings' {

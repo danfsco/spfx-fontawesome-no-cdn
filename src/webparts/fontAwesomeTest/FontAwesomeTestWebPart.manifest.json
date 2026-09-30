@@ -18,11 +18,17 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
     "group": { "default": "Advanced" },
-    "title": { "default": "FontAwesomeTest" },
-    "description": { "default": "Verifies that Font Awesome icons are bundled without a public CDN dependency." },
+    "title": { "default": "APL Icon Picker" },
+    "description": { "default": "Lets page authors add an approved bundled icon without using a public CDN." },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "FontAwesomeTest"
+      "accessibleLabel": "Approved",
+      "iconColor": "#4052B5",
+      "iconName": "circleCheck",
+      "iconSize": 64,
+      "linkUrl": "",
+      "openInNewTab": false,
+      "showLabel": true
     }
   }]
 }

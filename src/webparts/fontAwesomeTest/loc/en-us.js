@@ -1,16 +1,24 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Description",
-    "BasicGroupName": "Group Name",
-    "DescriptionFieldLabel": "Description Field",
-    "AppLocalEnvironmentSharePoint": "The app is running on your local environment as SharePoint web part",
-    "AppLocalEnvironmentTeams": "The app is running on your local environment as Microsoft Teams app",
-    "AppLocalEnvironmentOffice": "The app is running on your local environment in office.com",
-    "AppLocalEnvironmentOutlook": "The app is running on your local environment in Outlook",
-    "AppSharePointEnvironment": "The app is running on SharePoint page",
-    "AppTeamsTabEnvironment": "The app is running in Microsoft Teams",
-    "AppOfficeEnvironment": "The app is running in office.com",
-    "AppOutlookEnvironment": "The app is running in Outlook",
-    "UnknownEnvironment": "The app is running in an unknown environment"
+    "AccessibleLabelFieldLabel": "Accessible label",
+    "BasicGroupName": "Icon settings",
+    "CircleCheckIcon": "Approved check",
+    "CircleInfoIcon": "Information",
+    "ColorFieldLabel": "Icon color (hex)",
+    "ColorValidationMessage": "Enter a hex color such as #4052B5.",
+    "EnvelopeIcon": "Email",
+    "HeartIcon": "Heart",
+    "HouseIcon": "Home",
+    "IconFieldLabel": "Icon",
+    "LinkFieldDescription": "Optional. Use a complete http:// or https:// address.",
+    "LinkFieldLabel": "Link URL",
+    "LinkValidationMessage": "Enter a complete http:// or https:// address.",
+    "OpenInNewTabFieldLabel": "Open link in a new tab",
+    "PropertyPaneDescription": "Choose an approved icon and configure how it appears.",
+    "ServerIcon": "Server",
+    "ShieldIcon": "Shield",
+    "ShowLabelFieldLabel": "Show the label",
+    "SizeFieldLabel": "Icon size",
+    "StarIcon": "Star"
   }
 });

@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-fontawesome-test-client-side-solution",
     "id": "8357c2c5-9dfd-4d7a-a016-135bc963ada7",
-    "version": "1.0.0.0",
+    "version": "1.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -16,10 +16,10 @@
     },
     "metadata": {
       "shortDescription": {
-        "default": "Demonstrates Font Awesome icons bundled inside an SPFx solution."
+        "default": "Lets page authors select approved Font Awesome icons bundled inside SPFx."
       },
       "longDescription": {
-        "default": "Renders selected Font Awesome SVG icons without a public Font Awesome CDN dependency."
+        "default": "Provides a no-code icon picker with size, color, label, and link settings without a public Font Awesome CDN dependency."
       },
       "screenshotPaths": [],
       "videoUrl": "",

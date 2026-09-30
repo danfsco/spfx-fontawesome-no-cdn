@@ -1,6 +1,9 @@
 export interface IFontAwesomeTestProps {
-  description: string;
-  isDarkTheme: boolean;
-  environmentMessage: string;
-  userDisplayName: string;
+  accessibleLabel: string;
+  iconColor: string;
+  iconName: string;
+  iconSize: number;
+  linkUrl: string;
+  openInNewTab: boolean;
+  showLabel: boolean;
 }

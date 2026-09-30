@@ -1,8 +1,23 @@
-# SPFx Font Awesome test
+# SPFx Font Awesome icon picker
 
-This SharePoint Framework web part renders selected Font Awesome SVG icons from
-packages included in the solution. It does not configure or call the public Font
-Awesome CDN.
+This SharePoint Framework web part lets nontechnical page authors add approved
+Font Awesome SVG icons to modern pages. The icon definitions are included in the
+solution, so the browser does not connect to the public Font Awesome CDN.
+
+## Author experience
+
+After adding **APL Icon Picker** to a page, the author uses the standard
+SharePoint property pane to:
+
+- Select an approved icon
+- Set its size and brand color
+- Provide an accessible label
+- Show or hide the visible label
+- Add an optional link
+- Choose whether the link opens in a new tab
+
+The sample deliberately exposes a small approved icon set. Add explicit imports
+and property-pane choices when your organization approves more icons.
 
 ## Prerequisites
 
@@ -26,22 +41,20 @@ sharepoint\solution\spfx-fontawesome-test.sppkg
 ## Deploy and test
 
 1. Upload the `.sppkg` file to the tenant App Catalog.
-2. Select **Enable this app and add it to all sites** for this temporary test,
-   or add the app only to a dedicated test site.
-3. Add **FontAwesomeTest** to a modern SharePoint page.
-4. Open the browser developer tools and select **Network**.
-5. Reload the page.
-6. Search the requests for `fontawesome`, `fortawesome`, `use.fontawesome.com`,
-   and `kit.fontawesome.com`.
-7. Confirm that the icons render and no Font Awesome network request appears.
+2. Enable the app.
+3. Add the app only to a dedicated test site, or approve broader deployment.
+4. Add **APL Icon Picker** to a modern page.
+5. Configure the icon through the property pane.
+6. In browser developer tools, confirm that the SPFx bundle comes from the
+   tenant App Catalog and no Font Awesome CDN request occurs.
 
 The package has `includeClientSideAssets` enabled. SharePoint therefore hosts
 the generated client-side bundle with the deployed solution.
 
 ## Scope
 
-This test proves that Font Awesome icon definitions can be bundled with an SPFx
-component. It does not replace fonts or icons in SharePoint's native interface.
+This sample gives page authors a no-code icon web part. It does not add icons
+inside SharePoint's standard Text web part or replace native SharePoint icons.
 
 ## References
 

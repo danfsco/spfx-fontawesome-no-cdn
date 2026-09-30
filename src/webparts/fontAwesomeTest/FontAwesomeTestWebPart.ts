@@ -3,7 +3,10 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   type IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneDropdown,
+  PropertyPaneSlider,
+  PropertyPaneTextField,
+  PropertyPaneToggle
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -13,61 +16,32 @@ import FontAwesomeTest from './components/FontAwesomeTest';
 import { IFontAwesomeTestProps } from './components/IFontAwesomeTestProps';
 
 export interface IFontAwesomeTestWebPartProps {
-  description: string;
+  accessibleLabel: string;
+  iconColor: string;
+  iconName: string;
+  iconSize: number;
+  linkUrl: string;
+  openInNewTab: boolean;
+  showLabel: boolean;
 }
 
 export default class FontAwesomeTestWebPart extends BaseClientSideWebPart<IFontAwesomeTestWebPartProps> {
-
-  private _isDarkTheme: boolean = false;
-  private _environmentMessage: string = '';
 
   public render(): void {
     const element: React.ReactElement<IFontAwesomeTestProps> = React.createElement(
       FontAwesomeTest,
       {
-        description: this.properties.description,
-        isDarkTheme: this._isDarkTheme,
-        environmentMessage: this._environmentMessage,
-        userDisplayName: this.context.pageContext.user.displayName
+        accessibleLabel: this.properties.accessibleLabel,
+        iconColor: this.properties.iconColor,
+        iconName: this.properties.iconName,
+        iconSize: this.properties.iconSize,
+        linkUrl: this.properties.linkUrl,
+        openInNewTab: this.properties.openInNewTab,
+        showLabel: this.properties.showLabel
       }
     );
 
     ReactDom.render(element, this.domElement);
-  }
-
-  protected onInit(): Promise<void> {
-    return this._getEnvironmentMessage().then(message => {
-      this._environmentMessage = message;
-    });
-  }
-
-
-
-  private _getEnvironmentMessage(): Promise<string> {
-    if (!!this.context.sdks.microsoftTeams) { // running in Teams, office.com or Outlook
-      return this.context.sdks.microsoftTeams.teamsJs.app.getContext()
-        .then(context => {
-          let environmentMessage: string = '';
-          switch (context.app.host.name) {
-            case 'Office': // running in Office
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentOffice : strings.AppOfficeEnvironment;
-              break;
-            case 'Outlook': // running in Outlook
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentOutlook : strings.AppOutlookEnvironment;
-              break;
-            case 'Teams': // running in Teams
-            case 'TeamsModern':
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentTeams : strings.AppTeamsTabEnvironment;
-              break;
-            default:
-              environmentMessage = strings.UnknownEnvironment;
-          }
-
-          return environmentMessage;
-        });
-    }
-
-    return Promise.resolve(this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentSharePoint : strings.AppSharePointEnvironment);
   }
 
   protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void {
@@ -75,15 +49,12 @@ export default class FontAwesomeTestWebPart extends BaseClientSideWebPart<IFontA
       return;
     }
 
-    this._isDarkTheme = !!currentTheme.isInverted;
     const {
       semanticColors
     } = currentTheme;
 
     if (semanticColors) {
       this.domElement.style.setProperty('--bodyText', semanticColors.bodyText || null);
-      this.domElement.style.setProperty('--link', semanticColors.link || null);
-      this.domElement.style.setProperty('--linkHovered', semanticColors.linkHovered || null);
     }
 
   }
@@ -107,8 +78,44 @@ export default class FontAwesomeTestWebPart extends BaseClientSideWebPart<IFontA
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneDropdown('iconName', {
+                  label: strings.IconFieldLabel,
+                  options: [
+                    { key: 'circleCheck', text: strings.CircleCheckIcon },
+                    { key: 'circleInfo', text: strings.CircleInfoIcon },
+                    { key: 'envelope', text: strings.EnvelopeIcon },
+                    { key: 'heart', text: strings.HeartIcon },
+                    { key: 'house', text: strings.HouseIcon },
+                    { key: 'server', text: strings.ServerIcon },
+                    { key: 'shield', text: strings.ShieldIcon },
+                    { key: 'star', text: strings.StarIcon }
+                  ]
+                }),
+                PropertyPaneSlider('iconSize', {
+                  label: strings.SizeFieldLabel,
+                  min: 24,
+                  max: 160,
+                  step: 8,
+                  showValue: true
+                }),
+                PropertyPaneTextField('iconColor', {
+                  label: strings.ColorFieldLabel,
+                  onGetErrorMessage: this._validateColor
+                }),
+                PropertyPaneTextField('accessibleLabel', {
+                  label: strings.AccessibleLabelFieldLabel
+                }),
+                PropertyPaneToggle('showLabel', {
+                  label: strings.ShowLabelFieldLabel
+                }),
+                PropertyPaneTextField('linkUrl', {
+                  description: strings.LinkFieldDescription,
+                  label: strings.LinkFieldLabel,
+                  onGetErrorMessage: this._validateLink
+                }),
+                PropertyPaneToggle('openInNewTab', {
+                  disabled: !this.properties.linkUrl,
+                  label: strings.OpenInNewTabFieldLabel
                 })
               ]
             }
@@ -116,5 +123,26 @@ export default class FontAwesomeTestWebPart extends BaseClientSideWebPart<IFontA
         }
       ]
     };
+  }
+
+  private _validateColor(value: string): string {
+    return /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(value)
+      ? ''
+      : strings.ColorValidationMessage;
+  }
+
+  private _validateLink(value: string): string {
+    if (!value) {
+      return '';
+    }
+
+    try {
+      const url: URL = new URL(value);
+      return url.protocol === 'https:' || url.protocol === 'http:'
+        ? ''
+        : strings.LinkValidationMessage;
+    } catch {
+      return strings.LinkValidationMessage;
+    }
   }
 }
