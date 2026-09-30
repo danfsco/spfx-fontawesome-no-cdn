@@ -1,0 +1,50 @@
+.fontAwesomeTest {
+  overflow: hidden;
+  padding: 1.5rem;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  border: 1px solid #d2d0ce;
+  border-radius: 0.5rem;
+  background: "[theme:bodyBackground, default: #ffffff]";
+}
+
+.fontAwesomeTest h2 {
+  margin: 0 0 0.5rem;
+}
+
+.intro {
+  max-width: 42rem;
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.iconGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+}
+
+.iconCard {
+  display: flex;
+  min-height: 7rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  border-radius: 0.375rem;
+  background: "[theme:neutralLighterAlt, default: #faf9f8]";
+}
+
+.icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  fill: "[theme:themePrimary, default: #0078d4]";
+}
+
+.environment {
+  margin: 1.25rem 0 0;
+  font-size: 0.875rem;
+  color: "[theme:bodySubtext, default: #605e5c]";
+}

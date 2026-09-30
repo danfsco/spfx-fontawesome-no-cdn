@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-fontawesome-test-client-side-solution",
+    "id": "8357c2c5-9dfd-4d7a-a016-135bc963ada7",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Font Awesome SPFx test",
+      "websiteUrl": "https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview",
+      "privacyUrl": "https://fontawesome.com/privacy",
+      "termsOfUseUrl": "https://fontawesome.com/license/free",
+      "mpnId": "Undefined-1.23.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Demonstrates Font Awesome icons bundled inside an SPFx solution."
+      },
+      "longDescription": {
+        "default": "Renders selected Font Awesome SVG icons without a public Font Awesome CDN dependency."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-fontawesome-test Feature",
+        "description": "The feature that activates elements of the spfx-fontawesome-test solution.",
+        "id": "236049bc-51f0-4e02-9ad7-0b36cdbbc399",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-fontawesome-test.sppkg"
+  }
+}

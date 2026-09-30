@@ -1,0 +1,23 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "spfx-fontawesome-test",
+    "environment": "spo",
+    "packageManager": "npm",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "useGulp": false,
+    "componentType": "webpart",
+    "template": "react",
+    "componentName": "FontAwesomeTest",
+    "componentDescription": "Verifies that Font Awesome icons are bundled without a public CDN dependency.",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.23.2",
+    "sdksVersions": {},
+    "version": "1.23.2",
+    "libraryName": "spfx-fontawesome-test",
+    "libraryId": "8357c2c5-9dfd-4d7a-a016-135bc963ada7",
+    "solutionShortDescription": "spfx-fontawesome-test description"
+  }
+}
