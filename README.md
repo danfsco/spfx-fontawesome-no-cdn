@@ -6,7 +6,7 @@ solution, so the browser does not connect to the public Font Awesome CDN.
 
 ## Author experience
 
-After adding **APL Icon Picker** to a page, the author uses the standard
+After adding **Font Awesome Icon Picker** to a page, the author uses the standard
 SharePoint property pane to:
 
 - Select an approved icon
@@ -43,7 +43,7 @@ sharepoint\solution\spfx-fontawesome-test.sppkg
 1. Upload the `.sppkg` file to the tenant App Catalog.
 2. Enable the app.
 3. Add the app only to a dedicated test site, or approve broader deployment.
-4. Add **APL Icon Picker** to a modern page.
+4. Add **Font Awesome Icon Picker** to a modern page.
 5. Configure the icon through the property pane.
 6. In browser developer tools, confirm that the SPFx bundle comes from the
    tenant App Catalog and no Font Awesome CDN request occurs.

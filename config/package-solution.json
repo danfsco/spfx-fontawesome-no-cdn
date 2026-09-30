@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-fontawesome-test-client-side-solution",
     "id": "8357c2c5-9dfd-4d7a-a016-135bc963ada7",
-    "version": "1.1.0.0",
+    "version": "1.2.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

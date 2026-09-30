@@ -18,7 +18,7 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
     "group": { "default": "Advanced" },
-    "title": { "default": "APL Icon Picker" },
+    "title": { "default": "Font Awesome Icon Picker" },
     "description": { "default": "Lets page authors add an approved bundled icon without using a public CDN." },
     "officeFabricIconFontName": "Page",
     "properties": {
