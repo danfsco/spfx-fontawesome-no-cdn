@@ -4,6 +4,10 @@ This SharePoint Framework web part lets nontechnical page authors add approved
 Font Awesome SVG icons to modern pages. The icon definitions are included in the
 solution, so the browser does not connect to the public Font Awesome CDN.
 
+## Demo
+
+[Watch the Font Awesome Icon Picker demo](demo.webm)
+
 ## Author experience
 
 After adding **Font Awesome Icon Picker** to a page, the author uses the standard
